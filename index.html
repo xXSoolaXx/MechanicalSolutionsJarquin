@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <title>Mechanical Solutions Jarquin S.A DE C.V</title>
+    <link rel="shortcut icon" href="FOTOS/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="font.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">  
+    <style>
+       
+        .slide {
+            position: relative;
+            margin-top: 26px;
+        }
+        .slide-inner {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: calc( 300px + 3em);
+        }
+        .slide-open:checked + .slide-item {
+            position: static;
+            opacity: 100;
+        }
+        .slide-item {
+            position: absolute;
+            opacity: 0;
+            -webkit-transition: opacity 0.6s ease-out;
+            transition: opacity 0.6s ease-out;
+        }
+        .slide-item img {
+            position: center;
+            display: flex;
+            height: 400px;
+            width: 70%;
+            text-align: center;
+        }
+        .slide-control {
+            background: rgba(0, 0, 0);
+            border-radius: 50%;
+            color: #fff;
+            cursor: pointer;
+            display: none;
+            font-size: 40px;
+            height: 40px;
+            line-height: 35px;
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translate(0, -50%);
+            cursor: pointer;
+            -ms-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+            text-align: center;
+            width: 40px;
+            z-index: 10;
+        }
+        .slide-control.prev {
+            left: 2%;
+        }
+        .slide-control.next {
+            right: 2%;
+        }
+        .slide-control:hover {
+            background: rgba(0, 0, 0, 0.8);
+            color: #aaaaaa;
+        }
+        #slide-1:checked ~ .control-1,
+        #slide-2:checked ~ .control-2,
+        #slide-3:checked ~ .control-3,
+        #slide-4:checked ~ .control-4,
+        #slide-5:checked ~ .control-5{
+            display: block;
+        }
+        .slide-indicador {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            bottom: 2%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 10;
+        }
+        .slide-indicador li {
+            display: inline-block;
+            margin: 0 5px;
+        }
+        .slide-circulo {
+            color: #828282;
+            cursor: pointer;
+            display: block;
+            font-size: 35px;
+        }
+        .slide-circulo:hover {
+            color: #aaaaaa;
+        }
+        #slide-1:checked ~ .control-1 ~ .slide-indicador 
+             li:nth-child(1) .slide-circulo,
+        #slide-2:checked ~ .control-2 ~ .slide-indicador 
+              li:nth-child(2) .slide-circulo,
+        #slide-3:checked ~ .control-3 ~ .slide-indicador 
+              li:nth-child(3) .slide-circulo,
+        #slide-4:checked ~ .control-4 ~ .slide-indicador
+              li:nth-child(4) .slide-circulo,
+        #slide-5:checked ~ .control-5 ~ .slide-indicador
+              li:nth-child(5) .slide-circulo{
+            color: #428bca;
+        }
+        #titulo {
+            width: 100%;
+            position: absolute;
+            padding: 0px;
+            margin: 0px auto;
+            text-align: center;
+            font-size: 27px;
+            color: rgba(255, 255, 255, 1);
+            font-family: 'Open Sans', sans-serif;
+            z-index: 9999;
+            text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), 
+                 -1px 0px 2px rgba(255, 255, 255, 0);
+        }
+    </style>
+</head>    
+    <body>
+        <header>
+           <div class="menu">   
+                <nav>
+                    <ul>    
+                        <li><a href="#">INICIO</a></li>
+                        <li><a href="#ne">NUESTRA EMPRESA</a></li>
+                        <li><a href="#np">NUESTROS PRODUCTOS</a></li>
+                        <li><a href="catalogovideos.html">VIDEOS</a></li>
+                        <li><a href="#ns">NUESTROS SERVICIOS</a></li>   
+                        <li><a href="#clientes">CLIENTES</a></li>
+                        <li><a href="#contacto">CONTACTANOS</a></li>
+                    </ul>
+                </nav>    
+            </div>
+            <section class="textos-header">
+                <h1>Mechanical Solutions Jarquin S.A de C.V somos una empresa 100% Mexicana con ingenieria de primer nivel
+                    dedicados a proporcionar soluciones en procesos de envasado. Contamos con personal altamente calificado,
+                    quienes le brindaran asistencia personalizada. Nuestro compromiso es ganarnos su confianza a traves de nuestro 
+                    desempeño, excediendo las expectativas con nuestros resultados.
+                </h1>
+                <h2>Mechanical Solutions Jarquin S.A de C.V & Mechanical Machinery</h2>    
+                <h3>~ Making high quality Machinery ~</h3>
+            </section>
+            <div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-8.69,21.21 C174.15,177.14 432.05,-122.85 498.64,113.98 L505.98,153.45 L0.00,150.00 Z" style="stroke: none; fill: #ffffff;"></path></svg></div>
+        </header>
+        <main>
+            
+            <div class="social-body">
+                <ul>
+                    <li class="facebook">
+                        <a class="icon-facebook" href="https://www.facebook.com/Mechanical-Solutions-107441418927641/" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li class="whatsapp">
+                        <a  class="icon icon-whatsapp" href="https://api.whatsapp.com/send/?phone=5215566747246" target="_blank">
+                            <i class="fa fa-whatsapp"></i>
+                        </a>
+                    </li>
+                    <li class="instagram">
+                        <a class="icon icon-instagram" href="https://instagram.com/mechanicalmachinery?igshid=ZDdkNTZiNTM=" target="_blank">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="tiktok">
+                        <a class="icon icon-tiktok" href="https://www.tiktok.com/@mechanicalsolutio2?is_from_webapp=1&sender_device=pc" target="_blank">
+                            <i class="fa fa-tiktok"></i>
+                        </a>
+                    </li>
+                    <li class="youtube">
+                        <a class="icon icon-youtube" href="https://www.youtube.com/@mechanicalsolutionsjarquin3631/featured" target="_blank">
+                            <i class="fa fa-youtube"><h2>►</h2></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <section class="contenedor sobre-nosotros">
+                <div class="contenedor-sobre-nosotros"> 
+                    <img src="FOTOS/FOTOMM.png" alt="" class="image-about-us"id="ne">  
+                    <img src="MECHANICAL TEAM/20211014_180656.jpg" alt="" class="image-about-us-2">   
+                        <div class="contenido-textos">
+                            <h3><span>☆</span> NOS DA GUSTO QUE NOS VISITES</h3> 
+                            <h4>Bienvenidos.<br>
+                               Mechanical Solutions Jarquin S.A de C.V<br> 
+                               Mechanical Machinery. 
+                            </h4>
+                        </div>
+                </div>
+            </section>
+
+            <section class="portafolio">
+                <div class="contenedor">
+                    <h2 class="titulo"id="np">NUESTROS PRODUCTOS</h2>
+                    <div class="galeria-port">
+                                    <div class="imagen-port">
+                                        <img src="FOTOS/5.png" alt="">
+                                        <a href="catalogollenadora.html">
+                                            <div class="hover-galeria">
+                                            <img src="icon-porta.png" alt="">
+                                            <p>LLENADORA</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="imagen-port">
+                                        <img src="FOTOS/TAPADORA PRINCIPAL.jpg" alt="">
+                                        <a href="catalogotapadora.html">
+                                            <div class="hover-galeria"> 
+                                                <img src="icon-porta.png" alt="">
+                                                <p>TAPADORA</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="imagen-port">
+                                        <img src="SORTEADORES/BOTELLAS/5SB.png" alt="">
+                                        <a href="catalogosorteador.html">
+                                            <div class="hover-galeria">
+                                                <img src="icon-porta.png" alt="">
+                                                <p>SORTEADOR</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="imagen-port">
+                                        <img src="FOTOS/ETIQUETADORA PRINCIPAL.jpg" alt="">
+                                        <a href="catalogoetiquetadora.html">
+                                            <div class="hover-galeria">
+                                                <img src="icon-porta.png" alt="">
+                                                <p>ETIQUETADORA</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="imagen-port">
+                                        <img src="FOTOS/7.jpeg" alt="">
+                                        <a href="catalogomanejos.html">
+                                            <div class="hover-galeria">
+                                                <img src="icon-porta.png" alt="">
+                                                <p>MANEJOS DE</p>
+                                                <p>BOTELLAS</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="imagen-port">
+                                        <img src="FOTOS/2.jpeg" alt="">
+                                        <a href="catalogotransportadores.html">
+                                            <div class="hover-galeria">
+                                                <img src="icon-porta.png" alt="">
+                                                <p>TRANSPORTADORES</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="imagen-port">
+                                        <img src="FOTOS/9.jpeg" alt="">
+                                        <a href="catalogorefacciones.html">
+                                            <div class="hover-galeria">
+                                                <img src="icon-porta.png" alt="">
+                                                <p>REFACCIONES</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="imagen-port">
+                                        <img src="MESA DE ACUMULACION/9MA.png" alt="">
+                                        <a href="catalogomesa.html">
+                                            <div class="hover-galeria">
+                                                <img src="icon-porta.png" alt="">
+                                                <p>MESA DE </p>
+                                                <p>ACUMULACION</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="imagen-port">
+                                        <img src="REBOBINADOR DE ETIQUETAS/1RE.png" alt="">
+                                        <a href="catalogootrasmaq.html">
+                                            <div class="hover-galeria">
+                                                <img src="icon-porta.png" alt="">
+                                                <p>OTRAS </p>
+                                                <p>MAQUINAS</p> 
+                                            </div>
+                                        </a>
+                                    </div>
+                    </div>
+
+                </div>
+            </section>
+            
+            <section id="clientes" class="clientes-contenedor">
+                <h2 class="titulo">NUESTROS CLIENTES</h2>
+                <div class="cards">
+                   <div class="card">
+                      <img src="logos/coca.png" alt="">
+                        <div class="contenido-texto-card">
+                            <h4>FEMSA</h4>
+                        </div>    
+                    </div>
+                    <div class="card">
+                      <img src="logos/sides.png" alt="">
+                        <div class="contenido-texto-card">
+                            <h4>SIDES</h4>   
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="logos/Quaker-state-logo.png" alt="">
+                          <div class="contenido-texto-card">
+                              <h4>QUAKER STATE</h4>   
+                          </div>
+                      </div>
+                </div>  
+                <div class="cards">
+                    <div class="card">
+                       <img src="logos/Unilever-Logo-1-removebg-preview.png" alt="">
+                         <div class="contenido-texto-card">
+                             <h4>Unilever</h4>
+                         </div>    
+                     </div>
+                     <div class="card">
+                       <img src="logos/Genomma_Lab-logo-3C593E9BDF-seeklogo.com.png" alt="">
+                         <div class="contenido-texto-card">
+                             <h4>Genomma Lab</h4>   
+                         </div>
+                     </div>
+                     <div class="card">
+                         <img src="logos/jumex.png" alt="">
+                           <div class="contenido-texto-card">
+                               <h4>JUMEX</h4>   
+                           </div>
+                       </div>
+                 </div>  
+                 <div class="cards">
+                    <div class="card">
+                       <img src="logos/bardahl-logo.png" alt="">
+                         <div class="contenido-texto-card">
+                             <h4>BARDAHL</h4>
+                         </div>    
+                     </div>
+                     <div class="card">
+                       <img src="logos/boing.png" alt="">
+                         <div class="contenido-texto-card">
+                             <h4>BOING</h4>   
+                         </div>
+                     </div>
+                     <div class="card">
+                         <img src="logos/herdez.png" alt="">
+                           <div class="contenido-texto-card">
+                               <h4>HERDEZ</h4>   
+                           </div>
+                       </div>
+                 </div> 
+                 <div class="cards">
+                    <div class="card">
+                       <img src="logos/peñafiel.png" alt="">
+                         <div class="contenido-texto-card">
+                             <h4>Peñafiel</h4>
+                         </div>    
+                     </div>
+                     <div class="card">
+                       <img src="logos/EVSA-removebg-preview.png" alt="">
+                         <div class="contenido-texto-card">
+                             <h4>Estilo y vanidad, S.A de C.V</h4>   
+                         </div>
+                     </div>
+                     <div class="card">
+                         <img src="logos/newcaney-removebg-preview.png" alt="">
+                           <div class="contenido-texto-card">
+                               <h4>NEW CANEY</h4>   
+                           </div>
+                       </div>
+                 </div> 
+                 <div>
+                    <div class="cards">
+                        <div class="card">
+                          <img src="logos/refresco.png" alt="">
+                            <div class="contenido-texto-card">
+                                <h4>Refresco</h4>   
+                            </div>
+                        </div>
+                    
+                    <div class="card">
+                         <img src="logos/logoMabaker_1000x1000.webp" alt="">
+                           <div class="contenido-texto-card">
+                               <h4>Ma Baker and Chef</h4>   
+                           </div>
+                       </div>
+
+                    <div class="card">
+                        <img src="logos/La_Costeña_logo.png" alt="">
+                          <div class="contenido-texto-card">
+                              <h4>La Costeña</h4>   
+                          </div>
+                    </div>
+                   </div>  
+                </div> 
+                <div>
+                    <div class="cards">
+                        <div class="card">
+                          <img src="logos/iuisa1.png" alt="">
+                            <div class="contenido-texto-card">
+                                <h4>IUISA</h4>   
+                            </div>
+                        </div> 
+                    <div class="card">
+                      <img src="logos/belticos_preview_rev_1.png" alt="150px" >
+                        <div class="contenido-texto-card">
+                            <h4>Belticos</h4>   
+                        </div>
+                    </div>
+                        <div class="card">
+                          <img src="logos/quala1.png" alt="">
+                            <div class="contenido-texto-card">
+                                <h4>Quala</h4>   
+                        </div>
+                    </div>  
+                </div> 
+             </div>
+             <div>
+                <div class="cards">
+                    <div class="card">
+                      <img src="logos/lala.png" alt="">
+                        <div class="contenido-texto-card">
+                            <h4>LALA</h4>   
+                        </div>
+                    </div> 
+                </div> 
+             </div>
+  
+            </section>
+
+            <section id="ns" class="about-services"> 
+                    <div class="contenedor">
+                        <h2 class="titulo">NUESTROS SERVICIOS</h2>
+                        <div class="slide">
+                            <div class="slide-inner">
+                                    <input class="slide-open" type="radio" id="slide-1" 
+                                        name="slide" aria-hidden="true" hidden="" checked="checked">
+                                    <div class="slide-item">
+                                         <center><img src="FOTOS/26.jpeg"></center> 
+                                    </div>
+                                    <input class="slide-open" type="radio" id="slide-2" 
+                                        name="slide" aria-hidden="true" hidden="">
+                                    <div class="slide-item">
+                                        <center><img src="FOTOS/15.jpeg"></center>
+                                    </div>
+                                    <input class="slide-open" type="radio" id="slide-3" 
+                                        name="slide" aria-hidden="true" hidden="">
+                                    <div class="slide-item">
+                                        <center><img src="FOTOS/27.jpeg"></center>
+                                    </div>
+                                    <input class="slide-open" type="radio" id="slide-4" 
+                                        name="slide" aria-hidden="true" hidden="" checked="checked">
+                                    <div class="slide-item">
+                                         <center><img src="FOTOS/14.jpeg"></center> 
+                                    </div>
+                                    <input class="slide-open" type="radio" id="slide-5" 
+                                        name="slide" aria-hidden="true" hidden="" checked="checked">
+                                    <div class="slide-item">
+                                         <center><img src="FOTOS/CONTROL.jpeg"></center>    
+                                    </div>
+                                <label for="slide-5" class="slide-control prev control-1">‹</label>
+                                <label for="slide-2" class="slide-control next control-1">›</label>
+                                <label for="slide-1" class="slide-control prev control-2">‹</label>
+                                <label for="slide-3" class="slide-control next control-2">›</label>
+                                <label for="slide-2" class="slide-control prev control-3">‹</label>
+                                <label for="slide-4" class="slide-control next control-3">›</label>
+                                <label for="slide-3" class="slide-control prev control-4">‹</label>
+                                <label for="slide-5" class="slide-control next control-4">›</label>
+                                <label for="slide-4" class="slide-control prev control-5">‹</label>
+                                <label for="slide-1" class="slide-control next control-5">›</label> 
+                                    <ol class="slide-indicador">
+                                        <li>
+                                            <label for="slide-1" class="slide-circulo">•</label>
+                                        </li>
+                                        <li>
+                                            <label for="slide-2" class="slide-circulo">•</label>
+                                        </li>
+                                        <li>
+                                            <label for="slide-3" class="slide-circulo">•</label>
+                                        </li>
+                                        <li>
+                                            <label for="slide-4" class="slide-circulo">•</label>
+                                        </li>
+                                        <li>
+                                            <label for="slide-5" class="slide-circulo">•</label>
+                                        </li>
+                                    </ol>
+                            </div>
+                        </div>
+                        <div class="servicio-cont">
+                           
+                            <div class="servicio-ind">
+                                
+                                <h3>Fabricación de equipos.</h3> 
+                                <p> • Fabricación de llenadoras.<br>
+                                    • Fabricación de rebobinadores.<br>
+                                    • Fabricación de sorteadores de botella.<br>
+                                </p>
+                            </div>
+                            
+                            <div class="servicio-ind">
+                                     
+                                 <h3>Refacciones.</h3>
+                                 <p> • Fabricación de Manejos de botella.<br>
+                                     • Chucks de tapado.<br>
+                                     • Discos de sorteo de botella.<br>
+                                 </p>
+                            </div>
+                            
+                            <div class="servicio-ind">
+                                        
+                                <h3>Servicios adicionales</h3>
+                                <p>  • Diseño y/o Actualización de sistemas de control.<br>
+                                     • Maquinados especiales.<br>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>  
+            </section>
+        </main>
+        <footer>
+            <div id="contacto" class="contenedor-footer">
+                <div class="content-foo">
+                    <h4>Teléfono</h4>
+                    <p>TEL: (55) 3609-0120</p>
+                    <p> (55) 5558-6686</p>
+                </div>
+                <div class="content-foo">
+                    <h4>Dirección</h4>
+                    <p>Calle: Jacinto Canek, No, 7, Col: San Juan Ixhuatepec, C.P: 55180 </p>
+                    <p> Tlanepantla de Baz, Estado de Mexico.</p>
+                </div>
+                <div class="content-foo">
+                    <h4>Correos electrónicos</h4>
+                        <p>direccion@mechanicalsolutions.com.mx</p>
+                        <p>ingenieria@mechanicalsolutions.com.mx</p>
+                        <p>ventas@mechanicalsolutions.com.mx</p>
+                        <p>ventascentro@mechanicalsolutions.com.mx</p>
+                </div>
+            </div>
+            <h2 class="titulo-final">&copy; MechanicalSolutionsJarquin S.A De C.V - Todos los derechos reservados</h2>
+        </footer>
+    </body>
+</html> 
